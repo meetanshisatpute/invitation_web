@@ -1,0 +1,201 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-cream: var(--cream);
+  --color-beige: var(--beige);
+  --color-gold: var(--gold);
+  --color-gold-bright: var(--gold-bright);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-paper: var(--paper);
+  --color-mustard: var(--mustard);
+  --color-blush: var(--blush);
+  --color-sage: var(--sage);
+  --color-maroon: var(--maroon);
+  --color-haldi: var(--haldi);
+  --color-crimson: var(--crimson);
+  --color-crimson-deep: var(--crimson-deep);
+  --color-rose: var(--rose);
+
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-script: "Great Vibes", cursive;
+  --font-deva: "Noto Serif Devanagari", "Cormorant Garamond", serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.75rem;
+  --cream: oklch(0.972 0.016 85);
+  --beige: oklch(0.925 0.035 80);
+  --gold: oklch(0.7 0.12 82);
+  --gold-bright: oklch(0.83 0.14 90);
+  --ink: oklch(0.24 0.05 15);
+  --ink-soft: oklch(0.34 0.06 15);
+  --paper: oklch(0.99 0.008 85);
+  --mustard: oklch(0.82 0.14 88);
+  --blush: oklch(0.74 0.15 5);
+  --sage: oklch(0.7 0.07 140);
+  --maroon: oklch(0.34 0.12 20);
+  --haldi: oklch(0.93 0.1 95);
+  --crimson: oklch(0.5 0.21 22);
+  --crimson-deep: oklch(0.36 0.16 18);
+  --rose: oklch(0.52 0.19 5);
+
+  --background: var(--cream);
+  --foreground: var(--ink);
+  --card: var(--paper);
+  --card-foreground: var(--ink);
+  --popover: var(--paper);
+  --popover-foreground: var(--ink);
+  --primary: var(--ink);
+  --primary-foreground: var(--cream);
+  --secondary: var(--beige);
+  --secondary-foreground: var(--ink);
+  --muted: var(--beige);
+  --muted-foreground: oklch(0.45 0.03 70);
+  --accent: var(--gold);
+  --accent-foreground: var(--paper);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.85 0.06 80);
+  --input: oklch(0.85 0.06 80);
+  --ring: var(--gold);
+
+  --gradient-gold: linear-gradient(135deg, oklch(0.62 0.11 72), oklch(0.86 0.13 90) 45%, oklch(0.62 0.1 70));
+  --gradient-seal: radial-gradient(circle at 35% 30%, oklch(0.88 0.13 88), oklch(0.68 0.12 75) 45%, oklch(0.45 0.09 65) 100%);
+  --shadow-paper: 0 20px 40px -18px oklch(0.3 0.05 60 / 0.45);
+  --shadow-seal: 0 8px 18px -4px oklch(0.3 0.06 60 / 0.55), inset 0 -4px 8px oklch(0.4 0.08 60 / 0.5), inset 0 3px 6px oklch(0.95 0.08 90 / 0.6);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-ink);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@utility label-caps {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+
+@utility paper-texture {
+  background-color: var(--cream);
+  background-image:
+    radial-gradient(oklch(0.85 0.04 75 / 0.35) 1px, transparent 1px),
+    radial-gradient(oklch(0.99 0.01 85 / 0.6) 1px, transparent 1px);
+  background-size: 7px 7px, 11px 11px;
+  background-position: 0 0, 3px 4px;
+}
+
+@utility lace-overlay {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.12;
+    background-image:
+      radial-gradient(circle at 50% 50%, transparent 5px, oklch(1 0 0) 6px, transparent 7px),
+      radial-gradient(circle at 0 0, transparent 9px, oklch(1 0 0) 10px, transparent 11px);
+    background-size: 22px 22px, 22px 22px;
+  }
+}
+
+@utility text-gold-gradient {
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility bg-gold-gradient { background: var(--gradient-gold); }
+@utility shadow-paper { box-shadow: var(--shadow-paper); }
+
+@utility wax-seal {
+  background: var(--gradient-seal);
+  box-shadow: var(--shadow-seal);
+}
+
+@utility gold-corners {
+  position: relative;
+  &::before, &::after {
+    content: "";
+    position: absolute;
+    width: 14px; height: 14px;
+    border-color: var(--gold-bright);
+    pointer-events: none;
+  }
+  &::before { top: -1px; left: -1px; border-top: 2px solid; border-left: 2px solid; border-top-left-radius: 10px; }
+  &::after { bottom: -1px; right: -1px; border-bottom: 2px solid; border-right: 2px solid; border-bottom-right-radius: 10px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .petal { display: none; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+@utility bg-crimson-pattern {
+  background-color: var(--crimson);
+  background-image:
+    radial-gradient(circle at 50% 0%, oklch(0.6 0.22 25 / 0.55), transparent 60%),
+    radial-gradient(oklch(0.85 0.12 88 / 0.14) 1.2px, transparent 1.5px);
+  background-size: 100% 100%, 18px 18px;
+}
+
+@utility text-shadow-soft { text-shadow: 0 2px 14px oklch(0.1 0.02 20 / 0.75); }
+
+/* falling rose petals */
+.petal {
+  position: absolute;
+  top: -5vh;
+  border-radius: 80% 0 80% 0;
+  background: radial-gradient(circle at 30% 30%, oklch(0.82 0.13 5), oklch(0.62 0.2 8));
+  opacity: 0.85;
+  animation: petal-fall linear infinite;
+  will-change: transform;
+}
+@keyframes petal-fall {
+  0% { transform: translate3d(0, -6vh, 0) rotate(0deg); }
+  50% { transform: translate3d(calc(var(--drift) * 0.5), 55vh, 0) rotate(260deg) scale(0.9); }
+  100% { transform: translate3d(var(--drift), 112vh, 0) rotate(540deg) scale(0.8); }
+}
+@keyframes sway { 0%,100% { transform: rotate(-1.6deg); } 50% { transform: rotate(1.6deg); } }
+@keyframes glow-ring { 0% { transform: scale(0.9); opacity: 0.9; } 100% { transform: scale(1.7); opacity: 0; } }
+@keyframes twinkle { 0%,100% { opacity: 0.35; } 50% { opacity: 1; } }
