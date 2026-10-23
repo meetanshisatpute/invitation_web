@@ -7,7 +7,6 @@ import { Countdown } from "@/components/Countdown";
 import { Events } from "@/components/EventCard";
 import { Gallery } from "@/components/Gallery";
 import { VenueMap } from "@/components/VenueMap";
-import { RSVPForm } from "@/components/RSVPForm";
 import { Footer } from "@/components/Footer";
 import { Blessing } from "@/components/Blessing";
 import { Petals } from "@/components/Ornaments";
@@ -80,7 +79,6 @@ function Index() {
         <Gallery />
         <Blessing />
         <VenueMap />
-        <RSVPForm />
         <Footer />
       </main>
       {opened && <Petals />}
