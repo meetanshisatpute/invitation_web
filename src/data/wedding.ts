@@ -8,6 +8,7 @@ import img1 from "@/assets/img1.jpeg";
 import img2 from "@/assets/img2.jpeg";
 import img3 from "@/assets/img3.jpeg";
 import img4 from "@/assets/img4.jpeg";
+import shuhanshi from "@/assets/shuhanshi.jpeg"
 
 
 
@@ -38,7 +39,7 @@ export const wedding = {
   whatsapp: "919876543210",
   quote: "Two souls, one journey, forever begins here.",
   images: {
-    invitationTop: couple,
+    invitationTop: shuhanshi,
     invitationBottom: hands,
     rememberBg: hands,
     countdownBg: rings,
