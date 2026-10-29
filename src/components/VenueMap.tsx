@@ -31,14 +31,15 @@ export function VenueMap() {
       </Reveal>
       <p className="mt-6 font-display text-xl text-ink">{wedding.venue.name}</p>
       <p className="mt-1 font-serif text-base text-muted-foreground">{wedding.venue.address}</p>
-      <div className="mt-6 grid grid-cols-2 gap-3">
-        <a href={mapsDirectionsUrl} target="_blank" rel="noreferrer" className="label-caps flex items-center justify-center gap-2 rounded-full bg-crimson py-3 text-cream">
+      <div className="mt-6 flex justify-center">
+        <a href={mapsDirectionsUrl} target="_blank" rel="noreferrer" className="label-caps flex w-full max-w-xs items-center justify-center gap-2 rounded-full bg-crimson py-3 text-cream">
           <Navigation className="h-3.5 w-3.5" /> Directions
         </a>
-        <button onClick={share} className="label-caps flex items-center justify-center gap-2 rounded-full border border-crimson py-3 text-crimson">
+        {/* <button onClick={share} className="label-caps flex items-center justify-center gap-2 rounded-full border border-crimson py-3 text-crimson">
           <Share2 className="h-3.5 w-3.5" /> Share
-        </button>
+        </button> */}
       </div>
     </section>
   );
 }
+

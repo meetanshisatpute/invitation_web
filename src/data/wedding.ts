@@ -4,6 +4,12 @@ import rings from "@/assets/rings.jpg";
 import prewed from "@/assets/prewed.jpg";
 import haldi from '@/assets/haldi.jpg';
 import reception from "@/assets/reception.jpg"
+import img1 from "@/assets/img1.jpeg";
+import img2 from "@/assets/img2.jpeg";
+import img3 from "@/assets/img3.jpeg";
+import img4 from "@/assets/img4.jpeg";
+
+
 
 // Single source of truth — edit names, dates, venue and images here.
 export const wedding = {
@@ -37,13 +43,13 @@ export const wedding = {
     rememberBg: hands,
     countdownBg: rings,
     arch: prewed,
-    gallery: [couple, prewed, rings, hands],
+    gallery: [img1, img3, img4, img2],
     events: { ring: rings, haldi: haldi, reception: reception },
   },
   galleryCaptions: [
     "Blessings of the Families",
-    "A Walk Together",
-    "The Promise of a Lifetime – Ring Ceremony",
+    "A Lifetime Together",
+    "One little dance, a lifetime of romance.",
     "Hand in Hand, Forever",
   ],
   blessing: "Awaiting Your Noble Presence",
@@ -65,7 +71,7 @@ export const wedding = {
       title: "Haldi",
       start: "2026-12-03T12:00:00",
       end: "2026-12-03T15:00:00",
-      time: "12:00 PM",
+      time: "11:00 PM",
       theme: "haldi" as const,
       tagline: "A joyful turmeric ceremony filled with colour, laughter & blessings",
     },
